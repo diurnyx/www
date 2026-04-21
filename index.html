@@ -1,46 +1,129 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Startseite</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diurnyx</title>
+  <meta name="description" content="Diurnyx is a modular biosignal acquisition platform for experimental sleep research, supporting flexible sensor configurations and reproducible data collection workflows.">
   <style>
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+
+    header, section, footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      border-bottom: 1px solid #ddd;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    .notice {
+      border: 1px solid #ccc;
+      padding: 10px;
       background: #f9f9f9;
+      margin-top: 20px;
     }
-    main {
-      text-align: center;
+
+    ul, ol {
+      padding-left: 20px;
     }
-    a {
-      display: inline-block;
-      margin: 0.5em 1em;
-      font-size: 1.2em;
-      text-decoration: none;
-      color: #0066cc;
-    }
-    a:hover {
-      text-decoration: underline;
+
+    footer {
+      border-top: 1px solid #ddd;
+      font-size: 0.9em;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-<main>
+<header>
   <h1>Diurnyx</h1>
+  <p><strong>Modular biosignal acquisition for experimental sleep research</strong></p>
   <p>
-    <a href="/impressum.html">Impressum</a>
-    |
-    <a href="/datenschutz.html">Datenschutzerklärung</a>
-    |
-    <a href="/disclaimer.html">Haftungsausschluss</a>
+    Diurnyx is a configurable, standalone platform for recording biosignals in sleep-related research and engineering contexts.
+    It is intended for use in experimental environments where flexible sensor configurations and reproducible data collection workflows are required.
   </p>
-</main>
+</header>
+
+<section>
+  <h2>Purpose</h2>
+  <p>
+    Diurnyx is designed to support exploratory and experimental work involving biosignal acquisition in sleep-related contexts.
+  </p>
+  <p>
+    It provides a hardware platform where sensor configurations can be defined in software, allowing measurement setups to be adjusted between experiments without modification of the underlying system.
+  </p>
+  <p>
+    The system is intended to facilitate iterative development, prototyping, and data collection for studies involving sleep and related physiological signals in non-clinical settings.
+  </p>
+</section>
+
+<section>
+  <h2>System Characteristics</h2>
+  <ul>
+    <li><strong>Configurable sensor architecture:</strong> Sensor selection and configuration are defined via a configuration file, enabling repeatable and adjustable measurement setups across different sleep-related experiments.</li>
+    <li><strong>Compact, wearable form factor:</strong> Lightweight and practical for extended recording sessions, including overnight studies, with consideration for wearability during data collection.</li>
+    <li><strong>Standalone operation:</strong> No host computer required during recording. Powered via USB-C and records directly to removable storage.</li>
+    <li><strong>Standardized data format:</strong> Data is stored in EDF (European Data Format), commonly used in sleep research workflows.</li>
+    <li><strong>Deterministic data handling:</strong> Each recording session is saved as a separate, timestamped file on a FAT-formatted SD card.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Typical Use Cases</h2>
+  <ul>
+    <li>Prototyping sleep-related biosignal measurement setups</li>
+    <li>Comparing sensor configurations in sleep experiments</li>
+    <li>Collecting datasets for sleep-related signal processing and analysis development</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Technical Summary</h2>
+  <ul>
+    <li>Modular sensor support with configuration via <code>config.json</code></li>
+    <li>SD card storage (FAT filesystem)</li>
+    <li>Timestamp-based session files</li>
+    <li>EDF (European Data Format) output</li>
+    <li>Firmware implemented in Rust for system stability</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Research Use Only</h2>
+  <div class="notice">
+    <p>Diurnyx is provided solely for research and experimental purposes.</p>
+    <ul>
+      <li>Not a medical device within the meaning of EU MDR 2017/745</li>
+      <li>No CE marking as a medical device</li>
+      <li>Not intended for diagnosis, treatment, monitoring, prediction, or prevention of disease</li>
+      <li>Not validated for clinical or medical use</li>
+      <li>No claims are made regarding accuracy, reliability, or suitability for medical decision-making</li>
+      <li>Use is at the sole responsibility and risk of the user</li>
+    </ul>
+  </div>
+</section>
+
+<footer style="margin-top: 3rem; padding: 1rem 0; border-top: 1px solid #ccc; font-size: 0.9rem;">
+  <nav style="text-align: center;">
+    <a href="/impressum.html" style="margin: 0 1rem;">Legal Notice</a>
+    <a href="/datenschutz.html" style="margin: 0 1rem;">Privacy Policy</a>
+    <a href="/disclaimer.html" style="margin: 0 1rem;">Disclaimer</a>
+  </nav>
+</footer>
 
 </body>
 </html>
